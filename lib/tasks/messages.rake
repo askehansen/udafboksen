@@ -20,7 +20,7 @@ namespace :messages do
   desc "Sends unprocessed messages to user"
   task process: :environment do
     Message.unprocessed.find_each do |message|
-      MessageMailer.new_message(message).deliver_later
+      MessageMailer.new_message(message).deliver_now
       message.processed!
     end
   end
