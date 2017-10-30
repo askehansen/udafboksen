@@ -1,0 +1,2 @@
+module Eboks
+end

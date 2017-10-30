@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  eboks_id: MyString
+  eboks_folder_id: MyString
+  user: one
+
+two:
+  eboks_id: MyString
+  eboks_folder_id: MyString
+  user: two

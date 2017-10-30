@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  ssid: MyString
+  eboks_password: MyString
+  eboks_activation_key: MyString
+
+two:
+  email: MyString
+  ssid: MyString
+  eboks_password: MyString
+  eboks_activation_key: MyString

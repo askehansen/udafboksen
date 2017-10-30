@@ -1,0 +1,23 @@
+<table class="main" width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="content-wrap">
+      <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="content-block">
+            <%= @eboks_message.sender %> har sendt dig en beksed gennem eboks
+          </td>
+        </tr>
+        <tr>
+          <td class="content-block">
+            <%= link_to @filename, attachments[@filename].url, class: 'btn-primary' %>
+          </td>
+        </tr>
+        <tr>
+          <td class="content-block">
+            Hilsen Udafboksen
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
