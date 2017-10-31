@@ -20,7 +20,7 @@ gem 'pry-rails'
 gem 'figaro'
 gem 'oga'
 gem 'slim-rails'
-gem 'webpacker'
+gem 'webpacker', '~> 3.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
