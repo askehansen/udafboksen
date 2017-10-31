@@ -1,0 +1,76 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require milligram/dist/milligram.min
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  background: #68DCA8;
+  color: #fff;
+  font-family: 'Arvo', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+h1 {
+  font-family: 'Courgette', cursive;
+}
+
+.backdrop-wrapper {
+  position: absolute;
+  top: -400px;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+.backdrop {
+  background: rgba(0,0,0,0.03);
+  width: 1000px;
+  height: 3000px;
+  transform: rotate(60deg);
+}
+
+.error-message {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  right: 100px;
+  background: #323234;
+  border-radius: 3px;
+  padding: 50px;
+  color: #fff;
+  text-align: center;
+
+  animation: error-message 200ms ease-out;
+}
+.error-message-text {
+  margin-bottom: 20px;
+}
+
+.error-message-button {
+  font-family: "Arvo", serif;
+  text-transform: none;
+  background: none;
+  border: none;
+  border-bottom: 3px solid #fff;
+}
+
+@keyframes error-message {
+  from {
+    transform: translateY(-400px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

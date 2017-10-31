@@ -1,0 +1,24 @@
+.container
+  .users-hero
+    = image_tag 'liberate.svg', class: 'users-hero-icon'
+    h1.users-hero-title ud-af-boksen
+    h2.users-hero-lead Befri din e-Boks!
+  .users-explain
+    | ud-af-boksen sender alle dine e-Boks beskeder til dig på email.
+    div Nemt og enkelt.
+    
+  = form_with model: @user, class: 'users-form', html: { role: 'users-form' } do |f|
+    .users-form-group
+      label.users-form-label Indtast din email
+      = f.text_field :email, class: 'users-form-input', required: true
+    .users-form-group
+      label.users-form-label Dit CPR nr
+      = f.text_field :ssid, class: 'users-form-input', required: true
+    .users-form-group
+      label.users-form-label Dit e-Boks password
+      = f.password_field :eboks_password, class: 'users-form-input', required: true
+    .users-form-group
+      label.users-form-label Din e-Boks aktiveringskode
+      = f.password_field :eboks_activation_key, class: 'users-form-input', required: true
+    
+    = f.button 'Befri min e-Boks!', type: 'submit', class: 'users-form-submit'

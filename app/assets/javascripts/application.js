@@ -11,5 +11,15 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require on
 //= require turbolinks
 //= require_tree .
+//= require_self
+
+var app = new function () {
+  this.closeErrorMessage = function () {
+    document.querySelector('[role~=error-message]').remove()
+  }
+}
+
+on('click', '[role~=error-message-button]', app.closeErrorMessage)

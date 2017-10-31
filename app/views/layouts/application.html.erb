@@ -6,9 +6,20 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Arvo:400i|Courgette" rel="stylesheet">
   </head>
 
   <body>
+    <% flash.each do |kind, msg| %>
+      <div class="flash-message">
+        <%= msg %>
+      </div>
+    <% end %>
+
+    <div class="backdrop-wrapper">
+      <div class="backdrop"></div>
+    </div>
+
     <%= yield %>
   </body>
 </html>

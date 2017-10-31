@@ -9,6 +9,10 @@ class Eboks::Session
     Eboks::Client.new(authenticated_hash).get("#{@userid}/#{path}")
   end
 
+  def authenticated?
+    !!authenticate! rescue nil
+  end
+
   private
 
   def authenticate!
