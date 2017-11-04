@@ -11,7 +11,6 @@ namespace :messages do
           message.user = user
           message.status = :unprocessed
           message.save
-
         end
       end
     end

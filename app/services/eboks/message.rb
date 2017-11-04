@@ -1,7 +1,7 @@
 class Eboks::Message
   attr_accessor :id, :name, :sender, :received_at, :session, :folder, :format
 
-  def self.all(session, folder: folder)
+  def self.all(session, folder:)
     response = Oga.parse_xml(session.get("0/mail/folder/#{folder.id}?skip=0&take=1000").to_s)
 
     response.css('MessageInfo').map do |element|

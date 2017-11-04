@@ -3,4 +3,6 @@
     = image_tag 'liberate.svg', class: 'users-hero-icon'
     h1.users-hero-title ud-af-boksen
     h2.users-hero-lead Tillykke! Du har nu befriet din e-Boks!
-  .users-explain Du vil løbende modtage dine e-Boks beskeder på din email
+  .users-latest-message = "I øvrigt har du fået en besked fra #{@latest_message.eboks_message.sender} for #{time_ago_in_words(@latest_message.eboks_message.received_at)} siden. Prøv at tjekke din email."
+  .users-message-updates Du vil løbende modtage dine e-Boks beskeder på din email
+  
