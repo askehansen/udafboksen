@@ -4,6 +4,8 @@ ud-af-boksen works by syncing e-Boks messages and delivers them as attachment to
 
 ## Deploying to Heroku
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/askehansen/udafboksen)
+
 1. Deploy the app using the Heroku button.
 
 2. Once the app is running you will need to set up two scheduled task:
