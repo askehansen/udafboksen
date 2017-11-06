@@ -1,0 +1,23 @@
+{
+  "name": "ud-af-boksen",
+  "description": "Send e-Boks message by email",
+  "repository": "https://github.com/askehansen/udafboksen",
+  "keywords": ["e-boks", "eboks"],
+  "website": "https://www.unboks.dk",
+  "success_url": "/",
+  "addons": ["heroku-postgresql:hobby-dev", "sendgrid:starter", "scheduler:standard", "sentry:f1"],
+  "env": {
+    "RAILS_ENV": "production",
+    "SECRET_KEY_BASE": {
+            "description": "This gets generated",
+            "generator": "secret"
+    },
+    "ENCRYPTION_KEY": {
+            "description": "This gets generated",
+            "generator": "secret"
+    }
+  },
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  }
+}
