@@ -12,4 +12,4 @@ ud-af-boksen works by syncing e-Boks messages and delivers them as attachment to
    * `rake messages:sync` will sync new messages.
    * `rake messages:deliver` will deliver new messages by email and mark the message as delivered.
 
-3. Use Heroku Scheduler to run these tasks every hour: `bundle exec rake messages:sync ; bundle exec rake messages:deliver`
+3. Open Heroku Scheduler add add these tasks to run every hour: `bundle exec rake messages:sync ; bundle exec rake messages:deliver`
