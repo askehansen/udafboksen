@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ud-af-boksen works by syncing e-Boks messages and delivers them as attachment to the user by email.
 
-Things you may want to cover:
+## Deploying to Heroku
 
-* Ruby version
+1. Deploy the app using the Heroku button.
 
-* System dependencies
+2. Once the app is running you will need to set up two scheduled task:
+   * `rake messages:sync` will sync new messages.
+   * `rake messages:deliver` will deliver new messages by email and mark the message as delivered.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+3. Use Heroku Scheduler to run these tasks every hour: `bundle exec rake messages:sync ; bundle exec rake messages:deliver`
