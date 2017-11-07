@@ -17,10 +17,10 @@
       </div>
     <% end %>
 
-    <div class="backdrop-wrapper">
-      <div class="backdrop"></div>
+    <div class="main">
+      <%= yield %>
     </div>
 
-    <%= yield %>
+    <div class="backdrop"></div>
   </body>
 </html>

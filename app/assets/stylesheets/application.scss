@@ -10,35 +10,35 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require milligram/dist/milligram.min
- *= require_tree .
+ *= require basscss/css/basscss.min
  *= require_self
  */
 
+ @import "colors";
+ @import "users";
+
 body {
-  background: #68DCA8;
+  background: $green;
   color: #fff;
   font-family: 'Arvo', serif;
   font-style: italic;
   font-weight: 400;
+  margin: 0;
 }
 
-h1 {
-  font-family: 'Courgette', cursive;
+.main {
+  position: relative;
+  z-index: 1;
 }
 
-.backdrop-wrapper {
+.backdrop {
   position: absolute;
-  top: -400px;
+  top: 450px;
   left: 0;
   right: 0;
-  overflow: hidden;
-}
-.backdrop {
   background: rgba(0,0,0,0.03);
-  width: 1000px;
-  height: 3000px;
-  transform: rotate(60deg);
+  transform: skewY(-35deg);
+  height: 1100px;
 }
 
 .error-message {

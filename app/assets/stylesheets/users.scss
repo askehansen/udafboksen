@@ -3,95 +3,235 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.users-form {
-  max-width: 440px;
+.users-header {
+  margin-top: 100px;
+  position: relative;
+}
+
+.users-header-branding {
+  font-size: 45px;
+  font-family: 'Courgette', cursive;
+  color: $dark-purple;
+}
+
+.users-header-title {
+  font-size: 45px;
+  margin: 140px 0;
+  max-width: 445px;
+}
+
+.users-header-open-source {
+  text-align: center;
+  font-size: 20px;
+  width: 220px;
+  position: absolute;
+  top: 0;
+  right: 125px;
+}
+.users-header-open-source-icon {
+  width: 20px;
+  margin-bottom: 10px;
+}
+.users-header-open-source-link {
+  color: #fff;
+}
+
+.users-signup-wrapper {
+  position: relative;
+}
+.users-signup-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: $light-gray;
+  transform: skewY(3deg);
+  overflow: hidden;
+}
+.users-signup-backdrop {
+  width: 1000px;
+  height: 2000px;
+  background: rgba(0,0,0,0.02);
+  position: absolute;
+  transform: skewX(55deg) translateX(-100px);
+}
+.users-signup {
+  position: relative;
+  padding: 1px;
+}
+.users-signup-cat {
+  position: absolute;
+  top: -450px;
+  right: 140px;
+}
+
+.users-signup-form {
+  max-width: 390px;
   margin: 100px auto;
 }
 
-.users-form-group {
+.users-signup-form-group {
   text-align: center;
-  margin: 60px 0;
+  margin: 40px 0;
 }
-.users-form-label {
-  font-weight: 400;
-  font-size: 26px;
+.users-signup-form-label {
+  font-size: 22px;
+  color: $gray;
+  margin-bottom: 20px;
 }
 
-.users-form-input {
-  border: 3px solid #fff !important;
-  height: 68px !important;
-  padding: 10px 30px;
+.users-signup-form-checkbox {
+  text-align: left;
+  display: flex;
+  color: $gray;
+  align-items: center;
+}
+.users-signup-form-checkbox-input-wrapper {
+  margin-right: 15px;
+}
+.users-signup-form-checkbox-input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.users-signup-form-checkbox-input-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 3px solid $dark-purple;
+  transition: background 200ms ease-out;
+}
+.users-signup-form-checkbox-input:checked ~ .users-signup-form-checkbox-input-box {
+  background: $dark-purple;
+  .users-signup-form-checkbox-input-box-check {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+
+.users-signup-form-checkbox-input-box-check {
+  opacity: 0;
+  transition: all 200ms ease-out;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;
+}
+
+.users-signup-form-input {
+  border: 3px solid $dark-purple;
+  border-radius: 3px;
+  background: none;
+  height: 56px;
+  width: 100%;
   text-align: center;
   color: #fff;
   font-family: "Arvo", serif;
   font-size: 20px;
+  box-sizing: border-box;
 
   transition: background 200ms;
 
   &:valid {
-    background: #fff;
-    color: #9013FE;
+    background: $dark-purple;
+    color: #fff;
   }
 }
-.users-form-submit {
-  height: 68px !important;
+.users-signup-form-submit {
+  height: 72px;
   width: 100%;
-  background: #9013FE;
-  background-image: linear-gradient(-8deg, rgba(255, 255, 255, 0), rgba(0,0,0,0.1));
+  background: $purple;
+  color: #fff;
   border-radius: 3px;
+  border: none;
   font-family: "Arvo", serif;
-  font-size: 26px;
-  text-transform: none;
+  font-size: 24px;
+  cursor: pointer;
+}
 
-  &:hover {
-    background-image: none;
-    background: #9013FE;
+.users-how-it-works {
+  text-align: center;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: 50px;
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+.users-how-it-works-title {
+    font-size: 48px;
+    font-family: 'Courgette', cursive;
+    color: $dark-purple;
+}
+
+.users-how-it-works-section {
+  font-size: 26px;
+  margin: 20px 0;
+
+  &:not(:last-child)::after {
+    width: 57px;
+    height: 3px;
+    background: #fff;
+    display: block;
+    content: "";
+    margin: 20px auto;
   }
 }
 
-.users-hero {
-  text-align: center;
+.users-faq-wrapper {
+  position: relative;
+  margin-bottom: 100px;
+}
+.users-faq-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: $dark-purple;
+  transform: skewY(-3deg);
+}
+.users-faq {
+  position: relative;
+  padding: 1px;
+}
+.users-faq-cat {
+  position: absolute;
+  top: -550px;
+  left: 40px;
+}
+
+.users-faq {
+  max-width: 770px;
   margin: auto;
-  padding: 100px 0;
 }
 
-.users-hero-icon {
-  width: 93px;
-}
-.users-hero-title {
-  font-size: 100px;
-  margin-top: 40px;
-}
-
-.users-hero-lead {
-  font-size: 52px;
-  color: #9013FE;
-}
-
-.users-explain {
-  font-size: 44px;
+.users-faq-title {
+  font-size: 50px;
   text-align: center;
-  max-width: 800px;
-  margin: auto;
+  font-family: "Courgette", sans-serif;
+  margin-top: 100px;
+  margin-bottom: 30px;
 }
 
-.users-latest-message {
+.users-faq-lead {
   font-size: 36px;
   text-align: center;
-  max-width: 800px;
-  margin: auto;
+  margin: 50px 0;
 }
 
-.users-message-updates {
-  font-size: 20px;
-  text-align: center;
-  max-width: 800px;
-  margin: 20px auto;
+.users-faq-body {
+  font-size: 26px;
 }
 
-.users-free-and-open-source {
-  font-size: 20px;
+.users-faq-author {
+  margin-top: 220px;
+  font-size: 30px;
   text-align: center;
-  max-width: 800px;
-  margin: 20px auto;
+}
+
+.users-faq-author-photo {
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: -70px;
 }

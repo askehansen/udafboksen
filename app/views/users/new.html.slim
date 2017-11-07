@@ -1,29 +1,63 @@
-.container
-  .users-hero
-    = image_tag 'liberate.svg', class: 'users-hero-icon'
-    h1.users-hero-title ud-af-boksen
-    h2.users-hero-lead Befri din e-Boks!
-  .users-explain
-    | ud-af-boksen sender alle dine e-Boks beskeder til dig på email.
-    div Nemt og enkelt.
+.max-width-4.mx-auto
+  .users-header
+    .users-header-branding ud-af-boksen
+    h1.users-header-title
+      | Befri din e-Boks og få alle dine beskeder på email.
+      div Nemt og enkelt.
+    .users-header-open-source
+      div = image_tag 'github.svg', class: 'users-header-open-source-icon'
+      div ud-af-boksen er
+      div = link_to 'open source', 'https://github.com/askehansen/udafboksen', target: '_blank', class: 'users-header-open-source-link'
+      
+.users-signup-wrapper
+  .users-signup-background
+    .users-signup-backdrop
+  = r_image_tag 'sitting-cat.png', class: 'users-signup-cat'
+  .users-signup
+    = form_with model: @user, class: 'users-signup-form', html: { role: 'users-signup-form' } do |f|
+      .users-signup-form-group
+        .users-signup-form-label Indtast din email
+        = f.text_field :email, class: 'users-signup-form-input', required: true
+      .users-signup-form-group
+        .users-signup-form-label Dit CPR nr
+        = f.text_field :ssid, class: 'users-signup-form-input', required: true
+      .users-signup-form-group
+        .users-signup-form-label Dit e-Boks password
+        = f.password_field :eboks_password, class: 'users-signup-form-input', required: true
+      .users-signup-form-group
+        .users-signup-form-label Din e-Boks aktiveringskode
+        = f.password_field :eboks_activation_key, class: 'users-signup-form-input', required: true
+      .users-signup-form-group.users-signup-form-checkbox
+        label.users-signup-form-checkbox-input-wrapper
+          input.users-signup-form-checkbox-input type="checkbox"
+          .users-signup-form-checkbox-input-box
+            = image_tag 'check.svg', class: 'users-signup-form-checkbox-input-box-check'
+        div Jeg er indforstået med at jeg benytter ud-af-boksen på eget ansvar
+      
+      = f.button 'Befri min e-Boks!', type: 'submit', class: 'users-signup-form-submit'
+
+.max-width-4.mx-auto
+  .users-how-it-works
+    h2.users-how-it-works-title Hvordan virker det?
+    .users-how-it-works-section Tilmeld dig med dit CPR nr. og e-Boks password
+    .users-how-it-works-section ud-af-boksen synkronisere nye beskeder hver time gennem samme API som e-Boks appen
+    .users-how-it-works-section Nye beskeder sendes til dig som vedhæftet filer på email
+
+
+.users-faq-wrapper
+  .users-faq-background
+  = r_image_tag 'walking-cat.png', class: 'users-faq-cat'
+  .users-faq
+    h2.users-faq-title Hvorfor er det gratis og open source?
+    p.users-faq-lead
+      | e-Boks har et problem:
+      br
+      | Jeg læser ikke min post!
+    p.users-faq-body Det er besværligt at benytte e-Boks og dette har ført til at jeg aldrig læste min post. Jeg gik derfor glip af vigtige beskeder og som udvikler satte jeg mig for at finde en løsning på problemet. Det har resulteret i denne service som jeg vælger at dele med resten af Danmark.
+    p.users-faq-body Hvis du ikke vil opgive dine oplysninger kan du tage kildekoden og hoste din egen server. Jeg har lavet en guide til hvordan gør som står beskrevet her. Det kræver lidt teknisk forståelse at følge.
     
-  = form_with model: @user, class: 'users-form', html: { role: 'users-form' } do |f|
-    .users-form-group
-      label.users-form-label Indtast din email
-      = f.text_field :email, class: 'users-form-input', required: true
-    .users-form-group
-      label.users-form-label Dit CPR nr
-      = f.text_field :ssid, class: 'users-form-input', required: true
-    .users-form-group
-      label.users-form-label Dit e-Boks password
-      = f.password_field :eboks_password, class: 'users-form-input', required: true
-    .users-form-group
-      label.users-form-label Din e-Boks aktiveringskode
-      = f.password_field :eboks_activation_key, class: 'users-form-input', required: true
-    
-    = f.button 'Befri min e-Boks!', type: 'submit', class: 'users-form-submit'
-  
-  .users-free-and-open-source
-    | Denne service er 
-    = link_to 'open source', 'https://github.com/askehansen/udafboksen', target: '_blank'
-    |  og gratis at benytte.
+    h2.users-faq-title Er det sikkert at bruge?
+    p.users-faq-body Dine log ind oplysninger krypteres og gemmes på en database hos Heroku. Når du har fået en ny post henter ud-af-boksen en fil fra e-Boks. Denne fil vedhæftes en email og sendes til dig gennem Sendgrid. Filen gemmes ikke på serveren.
+
+    .users-faq-author ud-af-boksen er lavet med kærlighed af Aske Hansen.
+    .users-faq-author-photo = r_image_tag 'aske.png'
