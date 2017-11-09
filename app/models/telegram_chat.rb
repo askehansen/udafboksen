@@ -1,3 +1,5 @@
+require 'mime-types'
+
 class TelegramChat
 
   def initialize(user)
