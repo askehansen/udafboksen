@@ -8,7 +8,6 @@ class TelegramUpdatesController < ApplicationController
     when '/stop'
       current_user.update telegram_user_id: nil
     when '/latest'
-
       TelegramChat.new(current_user).send_document(current_user.messages.order(:created_at).last.eboks_message.file)
     when /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
       if user = User.find_by(email: params[:message][:text])
@@ -23,7 +22,7 @@ class TelegramUpdatesController < ApplicationController
   private
 
   def current_user
-    User.find_or_initialize_by(params[:message][:from][:id])
+    User.find_or_initialize_by(telegram_user_id: params[:message][:from][:id])
   end
 
 end
