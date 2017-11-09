@@ -1,16 +1,17 @@
-var users = new function () {
+import on from 'on'
 
-  this.ajaxError = function (e) {
+const ErrorMessage = {
 
-    var errorMessage = document.createElement('div')
+  show (message) {
+    const errorMessage = document.createElement('div')
     errorMessage.className = 'error-message'
     errorMessage.setAttribute('role', 'error-message')
 
-    var text = document.createElement('div')
+    const text = document.createElement('div')
     text.className = 'error-message-text'
-    text.innerText = e.detail[0].error
+    text.innerText = message
 
-    var button = document.createElement('button')
+    const button = document.createElement('button')
     button.innerText = 'Prøv igen'
     button.className = 'error-message-button'
     button.setAttribute('role', 'error-message-button')
@@ -19,9 +20,14 @@ var users = new function () {
     errorMessage.appendChild(text)
     errorMessage.appendChild(button)
     document.body.appendChild(errorMessage)
+  },
 
+  hide () {
+    document.querySelector('[role~=error-message]').remove()
   }
 
 }
 
-on('ajax:error', '[role~=users-form]', users.ajaxError)
+on('click', '[role~=error-message-button]', ErrorMessage.hide)
+
+export default ErrorMessage

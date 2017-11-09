@@ -9,3 +9,5 @@ function on (eventName, selector, callback) {
     }
   })
 }
+
+export default on
