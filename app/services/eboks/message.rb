@@ -27,6 +27,15 @@ class Eboks::Message
     self.build(response.at_css('Message'), session, folder)
   end
 
+  def file
+    @_file = begin
+      tempfile = Tempfile.new([name, ".#{format}"], :encoding => 'ascii-8bit')
+      tempfile.write(content)
+      tempfile.rewind
+      tempfile
+    end
+  end
+
   def content
     session.get("0/mail/folder/#{folder.id}/message/#{@id}/content").to_s
   end

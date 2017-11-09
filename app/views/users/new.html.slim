@@ -12,7 +12,6 @@
 .users-signup-wrapper
   .users-signup-background
     .users-signup-backdrop
-  = r_image_tag 'sitting-cat.png', class: 'users-signup-cat'
   .users-signup
     = form_with model: @user, class: 'users-signup-form', html: { role: 'users-signup-form' } do |f|
       .users-signup-form-group
@@ -46,7 +45,6 @@
 
 .users-faq-wrapper
   .users-faq-background
-  = r_image_tag 'walking-cat.png', class: 'users-faq-cat'
   .users-faq
     h2.users-faq-title Hvorfor er det gratis og open source?
     p.users-faq-lead

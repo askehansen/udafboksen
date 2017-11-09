@@ -22,6 +22,7 @@ gem 'oga'
 gem 'slim-rails'
 gem 'webpacker', '~> 3.0'
 gem 'sentry-raven'
+gem 'telegram-bot-ruby', require: 'telegram/bot'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

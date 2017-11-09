@@ -19,7 +19,13 @@ namespace :messages do
   desc "Sends unprocessed messages to user"
   task process: :environment do
     Message.unprocessed.find_each do |message|
-      MessageMailer.new_message(message).deliver_now
+
+      if message.user.telegram_user_id
+        TelegramChat.new(message.user).send_document(message.eboks_message.file)
+      else
+        MessageMailer.new_message(message).deliver_now
+      end
+
       message.processed!
     end
   end
