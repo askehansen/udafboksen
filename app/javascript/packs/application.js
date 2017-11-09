@@ -7,5 +7,10 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+import Turbolinks from 'turbolinks'
+import Rails from 'rails-ujs'
 
 import Users from 'users'
+
+Rails.start()
+Turbolinks.start()
