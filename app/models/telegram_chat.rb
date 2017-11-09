@@ -5,7 +5,8 @@ class TelegramChat
   end
 
   def send_document(file)
-    bot.api.send_document(chat_id: @user.telegram_user_id, document: Faraday::UploadIO.new(file.path, 'application/pdf'))
+    type = MIME::Types.type_for(file.path).first
+    bot.api.send_document(chat_id: @user.telegram_user_id, document: Faraday::UploadIO.new(file.path, type))
   end
 
   def send_message(text)
